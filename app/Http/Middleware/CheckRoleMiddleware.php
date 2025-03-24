@@ -20,6 +20,6 @@ class CheckRoleMiddleware
         if ($user->role == 'admin') {
             return $next($request);
         }
-        return abort(404);
+        return abort(403);
     }
 }
