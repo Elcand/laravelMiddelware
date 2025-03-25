@@ -16,8 +16,11 @@ return Application::configure(basePath: dirname(__DIR__))
         //     CheckRoleMiddleware::class,
         // ]);
 
-        $middleware->web('test-group', [
-            CheckRoleMiddleware::class,
+        // $middleware->web('test-group', [
+        //     CheckRoleMiddleware::class,
+        // ]);
+        $middleware->alias([
+            'checkRole' => CheckRoleMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
