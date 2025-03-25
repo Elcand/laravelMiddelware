@@ -8,7 +8,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => CheckRoleMiddleware::class], function () {
     Route::get('/post', [PostController::class, 'index'])->name('post.index');
     Route::post('/post', [PostController::class, 'store'])->name('post.store');
-});
+

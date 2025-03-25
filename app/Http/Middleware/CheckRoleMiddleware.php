@@ -16,6 +16,7 @@ class CheckRoleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // dd('Middleware dijalankan');
         $user = User::findOrFail($request->user_id);
         if ($user->role == 'admin') {
             return $next($request);
